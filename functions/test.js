@@ -9,9 +9,18 @@ exports.handler = (event, context, callback) => {
 
 // aync version
 
+// exports.handler = async (event, context) => {
+//     return {
+//         statusCode: 200,
+//         body: "Wow my api works!"
+//     }
+// }
+
+// 
 exports.handler = async (event, context) => {
+    const name = event.queryStringParameters.name || "banana"
     return {
         statusCode: 200,
-        body: "Wow my api works!"
+        body: `Wow my api works! Welcome ${name}`
     }
 }
